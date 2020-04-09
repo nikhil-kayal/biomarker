@@ -4,6 +4,12 @@ from src.entity_extraction import _get_ees
 
 
 def biomarker_object(r):
+    """
+    Function to identify bio-markers
+    :param r: List of sentences to identify biomarkers from
+    :return: bio-marker object if modality & alteration type are present in the sentence
+            [{"modality", "alteration_type", "gene", "exon", "alteration"}]
+    """
     pos_modality = ["positive", "fusion", "mutation", "mutated", "deletion", "aberration",
                     "re arrangements", "alterations", "deleterious", "express", "overexpressing",
                     "rearrangements", "re-arrangements", "over-expressing", "over expressing"]
