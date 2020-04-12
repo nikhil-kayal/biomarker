@@ -28,7 +28,6 @@ def _get_biomarker_object_from_hgnc_list(r):
     """
     Function to identify bio-markers from HGNC dictionary
     :param r: List of sentences to identify biomarkers from
-    :param hgnc_dict: HGNC gene mapping dictionary
     :return: bio-marker object if modality & alteration type are present in the sentence
             [{"modality", "alteration_type", "gene", "exon", "alteration"}]
     """

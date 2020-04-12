@@ -9,10 +9,10 @@ from src.identify_biomarkers import _get_biomarker_object_from_ees
 def main():
     client = pymongo.MongoClient(url)
     db = client[db_name]
-    db.authenticate(username, password, source='admin', mechanism='SCRAM-SHA-1')
+    db.authenticate(username, password, source="admin", mechanism="SCRAM-SHA-1")
     ctgov_collection = db[collection_name]
 
-    ctgov = pd.DataFrame(ctgov_collection.find({}, {lookup_markers_in: 1}).limit(1000))
+    ctgov = pd.DataFrame(ctgov_collection.find({}, {lookup_markers_in: 1}))
     ctgov = ctgov.where(pd.notnull(ctgov), None)
 
     stopwords_list = stopwords.words("english")
